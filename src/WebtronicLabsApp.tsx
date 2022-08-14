@@ -2,7 +2,7 @@ function WebtronicLabsApp() {
 
   return (
     <div className="App">
-      WebtronicLabs Demo
+      <p className="text-6xl">WebtronicLabs Demo</p>
     </div>
   )
 }
