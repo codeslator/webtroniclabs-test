@@ -1,8 +1,11 @@
-import React from 'react'
+import { FC } from 'react';
+import LoginForm from '../components/auth/LoginForm';
 
-const LoginPage = () => {
+const LoginPage: FC = () => {
   return (
-    <div>LoginPage</div>
+    <div className="mx-auto w-full">
+      <LoginForm />
+    </div>
   )
 }
 
