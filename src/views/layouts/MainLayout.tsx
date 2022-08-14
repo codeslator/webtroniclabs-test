@@ -5,11 +5,11 @@ import NavBar from '../components/home/NavBar'
 
 const MainLayout: FC = () => {
   return (
-    <div className="h-screen bg-gray-800 flex flex-col justify-between">
+    <div className="min-h-screen flex flex-col justify-between">
       <NavBar />
-      <div>
+      <main className="my-12">
         <Outlet />
-      </div>
+      </main>
       <Footer />
     </div>
   )
