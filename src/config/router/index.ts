@@ -1,5 +1,5 @@
 import { ParentRoute } from "../../global/interfaces";
-import { MainLayout } from "../../views/layouts";
+import { AuthLayout, MainLayout } from "../../views/layouts";
 import { HomePage, LoginPage, PokemonPage, TodosPage } from "../../views/pages";
 import { PATH, ROUTES } from "../navigation";
 
@@ -17,12 +17,18 @@ export const routes: ParentRoute[] = [
         path: ROUTES.POKEMON,
       },
       {
-        Component: LoginPage,
-        path: ROUTES.LOGIN,
-      },
-      {
         Component: TodosPage,
         path: ROUTES.TODOS,
+      },
+    ]
+  },
+  {
+    path: PATH.ROOT,
+    Layout: AuthLayout,
+    children: [
+      {
+        Component: LoginPage,
+        path: ROUTES.LOGIN,
       },
     ]
   },

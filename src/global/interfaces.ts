@@ -17,6 +17,7 @@ export interface ParentRoute {
 export interface UserAuthenticated {
   firstName: string;
   lastName: string;
+  username: string;
   email: string;
   id: number;
 }
