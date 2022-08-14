@@ -3,6 +3,7 @@ export enum PATH {
 	AUTH = 'auth',
 	LOGIN = 'login',
 	HOME = 'home',
+	POKEMON = 'pokemon',
 }
 
 export enum ROUTES {
@@ -10,4 +11,5 @@ export enum ROUTES {
 	AUTH = '/auth',
 	LOGIN = '/login',
 	HOME = '/home',
+	POKEMON = '/pokemon',
 }

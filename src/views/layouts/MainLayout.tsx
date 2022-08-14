@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Footer from '../components/home/Footer'
 import NavBar from '../components/home/NavBar'
 
-const HomeLayout: FC = () => {
+const MainLayout: FC = () => {
   return (
     <div className="h-screen bg-gray-800 flex flex-col justify-between">
       <NavBar />
@@ -15,4 +15,4 @@ const HomeLayout: FC = () => {
   )
 }
 
-export default HomeLayout
+export default MainLayout
