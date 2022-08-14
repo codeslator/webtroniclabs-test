@@ -1,6 +1,6 @@
 import { ParentRoute } from "../../global/interfaces";
 import { AuthLayout, HomeLayout, TestLayout } from "../../views/layouts";
-import { LoginPage } from "../../views/pages";
+import { HomePage, LoginPage } from "../../views/pages";
 import { PATH, ROUTES } from "../navigation";
 
 export const routes: ParentRoute[] = [
@@ -9,7 +9,7 @@ export const routes: ParentRoute[] = [
     Layout: HomeLayout,
     children: [
       {
-        Component: LoginPage,
+        Component: HomePage,
         path: ROUTES.HOME,
       }
     ]

@@ -1,8 +1,10 @@
-import React from 'react'
+import { FC } from 'react'
 
-const HomePage = () => {
+const HomePage: FC = () => {
   return (
-    <div>HomePage</div>
+    <div className="mx-auto w-10/12">
+      
+    </div>
   )
 }
 

@@ -7,7 +7,7 @@ const HomeLayout: FC = () => {
   return (
     <div className="h-screen bg-gray-800 flex flex-col justify-between">
       <NavBar />
-      <div className="">
+      <div>
         <Outlet />
       </div>
       <Footer />
