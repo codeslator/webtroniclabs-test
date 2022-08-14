@@ -2,7 +2,7 @@ export enum PATH {
 	ROOT = '',
 	AUTH = 'auth',
 	LOGIN = 'login',
-	HOME = ' home',
+	HOME = 'home',
 }
 
 export enum ROUTES {

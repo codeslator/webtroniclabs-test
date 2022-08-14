@@ -8,7 +8,7 @@ export const Router: FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={PATH.ROOT} element={<Navigate to={isAuthenticated ? PATH.HOME : PATH.LOGIN} replace />} />
+        <Route path={PATH.ROOT} element={<Navigate to={isAuthenticated ? PATH.HOME : PATH.HOME} replace />} />
         {routes.map(({ Layout, path: root, children }) => (
           <Route element={<Layout />} path={root} key={root}>
             {children.map(({ Component, path }) => (
