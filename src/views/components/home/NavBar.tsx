@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom"
 import { ROUTES } from "../../../config/navigation";
+import { useUI } from "../../../hooks";
 
 const routes = [
   {
@@ -22,11 +23,7 @@ const routes = [
 ];
 
 const NavBar = () => {
-  const [openMenu, setOpenMenu] = useState<boolean>(false);
-
-  const toggleOpenMenu = () => {
-    setOpenMenu(!openMenu);
-  }
+  const { openMenu, toggleOpenMenu } = useUI();
 
   return (
     <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
