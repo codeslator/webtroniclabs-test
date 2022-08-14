@@ -14,6 +14,17 @@ export interface ParentRoute {
   children: ChildRoute[];
 }
 
+export interface UserAuthenticated {
+  firstName: string;
+  lastName: string;
+  email: string;
+  id: number;
+}
+
+export interface UserNotAuthenticated {
+  message: string;
+}
+
 export interface Todo {
   userId: number;
   id?: number;
