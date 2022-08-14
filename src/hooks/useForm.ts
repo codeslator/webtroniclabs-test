@@ -1,21 +1,27 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, SyntheticEvent, useState } from 'react';
 
-interface FormField {
-  [x: string]: any;
-}
+const useForm = <T extends Object>(initialState: T, onSubmit: () => void) => {
+  const [form, setForm] = useState(initialState);
 
+  const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = target;
+    setForm({
+      ...form,
+      [name]: value
+    });
+  };
 
-
-const useForm = (initialState: FormField, onSubmit: () => void) => {
-  const [formValues, setFormValues] = useState<FormField>(initialState);
-
-  const handleChangle = (event: ChangeEvent) => {
-    
+  const handleSubmit = (e: SyntheticEvent) => {
+    e.preventDefault();
+    onSubmit();
   }
-  
+
   return {
-
+    form,
+    initialState,
+    handleChange,
+    handleSubmit,
   }
-};
+}
 
 export default useForm;
