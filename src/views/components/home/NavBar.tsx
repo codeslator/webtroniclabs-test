@@ -15,6 +15,10 @@ const routes = [
     name: 'Login',
     to: ROUTES.LOGIN,
   },
+  {
+    name: 'ToDos',
+    to: ROUTES.TODOS,
+  },
 ];
 
 const NavBar = () => {

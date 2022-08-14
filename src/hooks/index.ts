@@ -1,6 +1,10 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store";
 
+export { default as useAuth } from './useAuth';
+export { default as useUI } from './useUI';
+export { default as useTodo } from './useTodo';
+export { default as usePokemon } from './usePokemon';
 
 
 export const useAppDispatch = () => useDispatch<AppDispatch>();
