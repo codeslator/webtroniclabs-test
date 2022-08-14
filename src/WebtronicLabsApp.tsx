@@ -1,9 +1,12 @@
-function WebtronicLabsApp() {
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { Router } from "./config/router/Router";
 
+function WebtronicLabsApp() {
   return (
-    <div className="App">
-      <p className="text-6xl">WebtronicLabs Demo</p>
-    </div>
+    <Provider store={store}>
+      <Router />
+    </Provider>
   )
 }
 

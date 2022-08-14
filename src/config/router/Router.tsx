@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { routes } from '.';
 import { PATH } from '../navigation';
 
-const Router: FC = () => {
+export const Router: FC = () => {
   const isAuthenticated = false;
   return (
     <BrowserRouter>
@@ -20,5 +20,3 @@ const Router: FC = () => {
     </BrowserRouter>
   );
 };
-
-export default Router;

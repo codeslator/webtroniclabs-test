@@ -1,8 +1,11 @@
 import { FC } from 'react'
+import { Outlet } from 'react-router-dom';
 
 const TestLayout: FC = () => {
   return (
-    <div>TestLayout</div>
+    <div>
+      <Outlet />
+    </div>
   );
 };
 
