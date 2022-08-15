@@ -3,11 +3,12 @@ import { LOGIN, LOGOUT } from "../store/auth";
 import { selectAuthState } from "../store/selectors";
 
 const useAuth = () => {
-  const { isAuthenticated, isLoading, authenticatedUser } = useAppSelector(selectAuthState);
+  const { isAuthenticated, isLoading, authenticatedUser, error, hasError } = useAppSelector(selectAuthState);
   const dispatch = useAppDispatch();
 
   const login = (username: string, password: string) => {
     dispatch(LOGIN({ username, password }));
+    // console.log({ username, password })
   };
 
   const logout = () => {
@@ -20,6 +21,8 @@ const useAuth = () => {
     authenticatedUser,
     login,
     logout,
+    error,
+    hasError,
   };
 };
 

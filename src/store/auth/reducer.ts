@@ -12,6 +12,7 @@ export const setIsLoading = (state: AuthState, { payload }: PayloadAction<boolea
 
 export const setAuthenticatedUser = (state: AuthState, { payload }: PayloadAction<UserAuthenticated | null>) => {
   state.authenticatedUser = payload;
+
 };
 
 export const logOut = (state: AuthState) => {

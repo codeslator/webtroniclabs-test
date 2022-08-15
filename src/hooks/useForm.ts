@@ -1,6 +1,6 @@
 import { ChangeEvent, SyntheticEvent, useState } from 'react';
 
-const useForm = <T extends Object>(initialState: T, onSubmit: () => void) => {
+const useForm = <T extends Object>(initialState: T) => {
   const [form, setForm] = useState(initialState);
 
   const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
@@ -11,16 +11,10 @@ const useForm = <T extends Object>(initialState: T, onSubmit: () => void) => {
     });
   };
 
-  const handleSubmit = (e: SyntheticEvent) => {
-    e.preventDefault();
-    onSubmit();
-  }
-
   return {
     form,
     initialState,
     handleChange,
-    handleSubmit,
   }
 }
 
