@@ -2,12 +2,14 @@ import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import authReducer from './auth';
 import uiReducer from './ui';
 import todoReducer from './todos';
+import pokedexReducer from './pokemon';
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     ui: uiReducer,
     todo: todoReducer,
+    pokedex: pokedexReducer,
   },
 });
 

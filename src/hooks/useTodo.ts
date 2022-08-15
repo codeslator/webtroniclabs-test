@@ -3,7 +3,7 @@ import { selectTodoState } from "../store/selectors";
 import { FETCH_TODOS, FETCH_TODO_BY_ID } from "../store/todos";
 
 const useTodo = () => {
-  const { todos, currentTodo } = useAppSelector(selectTodoState);
+  const { todos, currentTodo, isLoading } = useAppSelector(selectTodoState);
   const dispatch = useAppDispatch();
 
 
@@ -20,7 +20,8 @@ const useTodo = () => {
     currentTodo,
     fetchTodoById,
     fetchTodos,
-  }
+    isLoading
+  };
 };
 
 export default useTodo;

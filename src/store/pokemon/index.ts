@@ -33,6 +33,9 @@ export const {
   setPokemonList: SET_POKEMON_LIST,
   setCurrentPokemon: SET_CURRENT_POKEMON,
   setIsLoading: SET_IS_LOADING,
+  nextPage: NEXT_PAGE,
+  previousPage: PREVIOUS_PAGE,
+  calculateOffset: CALCULATE_OFFSET,
 } = pokemonSlice.actions;
 export {
   fetchPokemonList as FETCH_POKEMON_LIST,

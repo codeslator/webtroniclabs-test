@@ -13,3 +13,15 @@ export const setCurrentPokemon = (state: PokemonState, { payload }: PayloadActio
 export const setIsLoading = (state: PokemonState, { payload }: PayloadAction<boolean>) => {
   state.isLoading = payload;
 };
+
+export const nextPage = (state: PokemonState) => {
+  state.currentPage += 1;
+};
+
+export const previousPage = (state: PokemonState) => {
+  state.currentPage -= 1;
+};
+
+export const calculateOffset = (state: PokemonState) => {
+  state.pageOffset = (state.currentPage * state.pageLimit) - state.pageLimit;
+};
