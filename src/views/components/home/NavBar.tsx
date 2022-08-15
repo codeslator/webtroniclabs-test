@@ -49,16 +49,26 @@ const NavBar = () => {
             {!isAuthenticated ? (
               <>
                 {webRoutes.map(({ name, to }) => (
-                  <li>
-                    <NavLink to={to} className={({ isActive }) => `block py-2 pr-4 pl-3 text-white  ${isActive ? 'bg-blue-700' : 'bg-transparent'} rounded md:bg-transparent ${isActive ? 'md:text-blue-700' : 'md:hover:text-blue-700'} md:p-0 dark:text-white`} aria-current="page">{name}</NavLink>
+                  <li key={to}>
+                    <NavLink
+                      to={to}
+                      className={({ isActive }) => `block py-2 pr-4 pl-3 text-white  ${isActive ? 'bg-blue-700' : 'bg-transparent'} rounded md:bg-transparent ${isActive ? 'md:text-blue-700' : 'md:hover:text-blue-700'} md:p-0 dark:text-white`} aria-current="page"
+                    >
+                      {name}
+                    </NavLink>
                   </li>
                 ))}
               </>
             ) : (
               <>
                 {appRoutes.map(({ name, to }) => (
-                  <li>
-                    <NavLink to={to} className={({ isActive }) => `block py-2 pr-4 pl-3 text-white  ${isActive ? 'bg-blue-700' : 'bg-transparent'} rounded md:bg-transparent ${isActive ? 'md:text-blue-700' : 'md:hover:text-blue-700'} md:p-0 dark:text-white`} aria-current="page">{name}</NavLink>
+                  <li key={to}>
+                    <NavLink
+                      to={to}
+                      className={({ isActive }) => `block py-2 pr-4 pl-3 text-white  ${isActive ? 'bg-blue-700' : 'bg-transparent'} rounded md:bg-transparent ${isActive ? 'md:text-blue-700' : 'md:hover:text-blue-700'} md:p-0 dark:text-white`} aria-current="page"
+                    >
+                      {name}
+                    </NavLink>
                   </li>
                 ))}
                 <NavLink to="/home" onClick={logout} className={({ isActive }) => `block py-2 pr-4 pl-3 text-white  ${isActive ? 'bg-blue-700' : 'bg-transparent'} rounded md:bg-transparent ${isActive ? 'md:text-blue-700' : 'md:hover:text-blue-700'} md:p-0 dark:text-white`} aria-current="page">Log Out</NavLink>
