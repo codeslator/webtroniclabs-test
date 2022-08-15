@@ -9,11 +9,16 @@ export const todoSlice = createSlice({
   initialState: todoState,
   reducers: templateReducers,
   extraReducers:  {
+    [fetchTodos.pending as any]: (state: TodoState) => {
+      state.isLoading = true;
+    },
     [fetchTodos.fulfilled as any]: (state: TodoState, { payload }: PayloadAction<Array<Todo>>) => {
       state.todos = payload;
+      state.isLoading = false;
     },
     [fetchTodos.rejected as any]: (state: TodoState) => {
       state.todos = [];
+      state.isLoading = false;
     },
     [fetchTodoById.fulfilled as any]: (state: TodoState, { payload }: PayloadAction<Todo>) => {
       state.currentTodo = payload;
@@ -27,6 +32,7 @@ export const todoSlice = createSlice({
 export const {
   setTodos: SET_TODOS,
   setCurrentTodo: SET_CURRENT_TODO,
+  setIsLoading: SET_IS_LOADING,
 } = todoSlice.actions;
 export {
   fetchTodos as FETCH_TODOS,

@@ -9,3 +9,7 @@ export const setTodos = (state: TodoState, { payload }: PayloadAction<Array<Todo
 export const setCurrentTodo = (state: TodoState, { payload }: PayloadAction<Todo | null>) => {
   state.currentTodo = payload;
 };
+
+export const setIsLoading = (state: TodoState, { payload }: PayloadAction<boolean>) => {
+  state.isLoading = payload;
+};
