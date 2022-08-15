@@ -1,4 +1,5 @@
-import { FC, SyntheticEvent } from 'react'
+import { FC, SyntheticEvent, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { useAuth, useForm } from '../../../hooks';
 
 interface AuthParams {
@@ -7,9 +8,16 @@ interface AuthParams {
 }
 
 const LoginForm: FC = () => {
-  const { login, error, hasError } = useAuth();;
+  const navigate = useNavigate();
+  const { login, error, hasError, isAuthenticated } = useAuth();;
   const { handleChange, form } = useForm<AuthParams>({ username: '', password: '' });
   const { username, password } = form;
+
+  useEffect(() => {
+    if(isAuthenticated) {
+      navigate('/todos')
+    }
+  }, [isAuthenticated])
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
