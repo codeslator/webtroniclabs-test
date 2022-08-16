@@ -9,7 +9,7 @@ npm install
 
 ## Run
 ```
-npm run
+npm run dev
 ```
 
 ## Features
@@ -23,6 +23,7 @@ npm run
 - JavaScript Fetch API to make requests
 - Custom Hooks (useAuth, usePokemon, useTodo, useUI)
 - Pokemon Page
+- Browser theme (light/dark)
 
 ## Dependencies 
 
