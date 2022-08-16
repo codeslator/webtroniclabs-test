@@ -3,7 +3,7 @@ import LoginForm from '../components/auth/LoginForm';
 
 const LoginPage: FC = () => {
   return (
-    <div className="mx-auto w-full">
+    <div className="mx-auto w-full px-5">
       <LoginForm />
     </div>
   );

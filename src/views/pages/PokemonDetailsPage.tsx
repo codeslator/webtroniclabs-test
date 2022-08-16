@@ -12,7 +12,7 @@ const PokemonDetailsPage: FC = () => {
   }, [pokemonId])
 
   return (
-    <div className="w-9/12 mx-auto">
+    <div className="w-full px-5 md:w-9/12 mx-auto">
       {(Boolean(currentPokemon) && currentPokemon !== null) && (
         <PokemonCard
           id={currentPokemon.id}

@@ -1,16 +1,17 @@
 import { FC, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { routes } from '.';
-import { PATH } from '../navigation';
+import { useAuth } from '../../hooks';
+import { PATH, ROUTES } from '../navigation';
 
 export const Router: FC = () => {
-  const isAuthenticated = false;
+  const { isAuthenticated } = useAuth(); 
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={PATH.ROOT}
-          element={<Navigate to={(isAuthenticated && Boolean(sessionStorage.getItem('username'))) ? PATH.TODOS : PATH.HOME} replace />}
+          element={<Navigate to={(isAuthenticated && Boolean(sessionStorage.getItem('username'))) ? ROUTES.TODOS : ROUTES.HOME} replace />}
         />
         {routes.map(({ Layout, path: root, children }) => (
           <Route element={<Layout />} path={root} key={root}>
