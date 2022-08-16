@@ -19,4 +19,5 @@ export const logOut = (state: AuthState) => {
   state.authenticatedUser = null;
   state.isAuthenticated = false;
   state.isLoading = false;
+  sessionStorage.removeItem('username');
 };

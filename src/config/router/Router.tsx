@@ -8,7 +8,10 @@ export const Router: FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={PATH.ROOT} element={<Navigate to={isAuthenticated ? PATH.TODOS : PATH.HOME} replace />} />
+        <Route
+          path={PATH.ROOT}
+          element={<Navigate to={(isAuthenticated && Boolean(sessionStorage.getItem('username'))) ? PATH.TODOS : PATH.HOME} replace />}
+        />
         {routes.map(({ Layout, path: root, children }) => (
           <Route element={<Layout />} path={root} key={root}>
             {children.map(({ Component, path }) => (

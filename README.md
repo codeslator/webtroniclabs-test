@@ -2,6 +2,7 @@
 
 ## Technical Test by WebtronicLabs - @codeslator (Andres Melendez)
 
+
 ### npm
 ```
 npm install
@@ -17,17 +18,17 @@ npm run
 - Tailwind CSS
 - Custom UI Layout
 - Persisted data in Redux Store + Redux Toolkit
-- Routin with React Router DOM v6
+- Routing with React Router DOM v6
 - Resposive Design (Mobile first)
 - JavaScript Fetch API to make requests
-- Custom Hooks
+- Custom Hooks (useAuth, usePokemon, useTodo, useUI)
+- Pokemon Page
 
 ## Dependencies 
 
 - Redux Toolkit + React Redux -> To persist and handle data in a global store;
 - Tailwind -> Provide multiple classes to use in UI development;
 - Router DOM -> Allow handle the app routing;
-
 
 ## API's
 
@@ -43,9 +44,9 @@ npm run
 - Configure routes for the 3 components ✅ 
 - Add HTML navigation bar to route to each view ✅ 
 - Add a user login form (just the user name) ✅
-- Save user name to session storage 
-- Add a guard and prevent a user from navigating unless session storage with the user name exists 
-- Add HTTP interceptor and add 'Content-Type: application/json' to header 
+- Save user name to session storage ✅
+- Add a guard and prevent a user from navigating unless session storage with the user name exists ✅
+- Add HTTP interceptor and add 'Content-Type: application/json' to header ✅
 - Read API path from environments file ✅
 - Add a service that makes the following HTTP GET requests (Use Promises or RxJs) ✅
 - Make use of that service in a new view ✅
