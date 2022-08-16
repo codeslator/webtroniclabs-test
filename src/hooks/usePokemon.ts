@@ -44,7 +44,7 @@ const usePokemon = () => {
   };
 
   const fetchPokemonByIdOrName = (pokemonId: string = '') => {
-    dispatch(FETCH_POKEMON_BY_ID_OR_NAME(pokemonId));
+    dispatch(FETCH_POKEMON_BY_ID_OR_NAME(pokemonId.toLowerCase()));
   };
 
   const nextPage = () => {
