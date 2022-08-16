@@ -3,17 +3,21 @@ import { usePokemon } from '../../../hooks'
 import PokemonCard from './PokemonItem'
 
 const PokemonList: FC = () => {
-  const { pokemonList, nextPage, previousPage, currentPage } = usePokemon();
+  const { pokemonList, nextPage, previousPage, currentPage, isLoading } = usePokemon();
   return (
     <>
+      {isLoading && (
+        <p className="text-3xl text-center font-medium text-gray-900 truncate dark:text-white">
+        Loading...
+      </p>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
-        {pokemonList.map(({ name, id, sprites, types }) => (
+        {pokemonList.map(({ name, id, sprites }) => (
           <PokemonCard
             key={id}
             id={id}
             name={name}
             sprites={sprites}
-            types={types}
           />
         ))}
       </div>
@@ -35,8 +39,7 @@ const PokemonList: FC = () => {
         </button>
       </div>
     </>
+  );
+};
 
-  )
-}
-
-export default PokemonList
+export default PokemonList;
