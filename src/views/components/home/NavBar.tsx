@@ -16,10 +16,6 @@ const webRoutes = [
     name: 'Login',
     to: ROUTES.LOGIN,
   },
-  // {
-  //   name: 'ToDos',
-  //   to: ROUTES.TODOS,
-  // },
 ];
 
 const appRoutes = [
@@ -38,7 +34,6 @@ const NavBar = () => {
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="https://flowbite.com/" className="flex items-center">
           <img src="https://webtroniclabs.com/assets/img/webtronic-logo-text.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-          {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">WebtronicLabs</span> */}
         </a>
         <button data-collapse-toggle="navbar-default" onClick={toggleOpenMenu} type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
           <span className="sr-only">Open main menu</span>
@@ -52,7 +47,7 @@ const NavBar = () => {
                   <li key={to}>
                     <NavLink
                       to={to}
-                      className={({ isActive }) => `block py-2 pr-4 pl-3 text-white  ${isActive ? 'bg-blue-700' : 'bg-transparent'} rounded md:bg-transparent ${isActive ? 'md:text-blue-700' : 'md:hover:text-blue-700'} md:p-0 dark:text-white`} aria-current="page"
+                      className={({ isActive }) => `block py-2 pr-4 pl-3 text-gray-500  ${isActive ? 'bg-blue-700' : 'bg-transparent'} rounded md:bg-transparent ${isActive ? 'md:text-blue-700' : 'md:hover:text-blue-700'} md:p-0 dark:text-white`} aria-current="page"
                     >
                       {name}
                     </NavLink>
@@ -65,13 +60,13 @@ const NavBar = () => {
                   <li key={to}>
                     <NavLink
                       to={to}
-                      className={({ isActive }) => `block py-2 pr-4 pl-3 text-white  ${isActive ? 'bg-blue-700' : 'bg-transparent'} rounded md:bg-transparent ${isActive ? 'md:text-blue-700' : 'md:hover:text-blue-700'} md:p-0 dark:text-white`} aria-current="page"
+                      className={({ isActive }) => `block py-2 pr-4 pl-3 text-gray-500  ${isActive ? 'bg-blue-700' : 'bg-transparent'} rounded md:bg-transparent ${isActive ? 'md:text-blue-700' : 'md:hover:text-blue-700'} md:p-0 dark:text-white`} aria-current="page"
                     >
                       {name}
                     </NavLink>
                   </li>
                 ))}
-                <NavLink to="/home" onClick={logout} className={({ isActive }) => `block py-2 pr-4 pl-3 text-white  ${isActive ? 'bg-blue-700' : 'bg-transparent'} rounded md:bg-transparent ${isActive ? 'md:text-blue-700' : 'md:hover:text-blue-700'} md:p-0 dark:text-white`} aria-current="page">Log Out</NavLink>
+                <NavLink to="/home" onClick={logout} className={({ isActive }) => `block py-2 pr-4 pl-3 text-gray-500  ${isActive ? 'bg-blue-700' : 'bg-transparent'} rounded md:bg-transparent ${isActive ? 'md:text-blue-700' : 'md:hover:text-blue-700'} md:p-0 dark:text-white`} aria-current="page">Log Out</NavLink>
               </>
             )}
           </ul>

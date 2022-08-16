@@ -4,7 +4,7 @@ import { Router } from "./config/router/Router";
 
 function WebtronicLabsApp() {
   return (
-    <div className="bg-gray-800">
+    <div className="bg-gray-100 dark:bg-gray-800">
       <Provider store={store}>
         <Router />
       </Provider>
