@@ -39,5 +39,13 @@ export const fetchPokemonList = createAsyncThunk('todos/fetchPokemonList', async
 export const fetchPokemonByIdOrName = createAsyncThunk('todos/fetchPokemonByIdOrName', async (pokemonId: string) => {
   const response = await fetch(`${POKEMON_API_URL}/${pokemonId}`);
   const data = await response.json();
-  return data;
+  const pokemon: Pokemon = {
+    id: data.id,
+    name: data.name,
+    is_default: data.is_default,
+    order: data.order,
+    sprites: data.sprites,
+    types: data.types,
+  }
+  return pokemon;
 });

@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { NavLink } from 'react-router-dom';
 import { Pokemon, Sprites, Type } from '../../../global/interfaces';
 
 interface PokemonItemProps {
@@ -15,9 +16,9 @@ const PokemonItem: FC<PokemonItemProps> = ({ name, id, sprites, types }) => {
         <img className="rounded-t-lg" src={sprites.other['official-artwork'].front_default} alt={name} />
       </a>
       <div className="p-5">
-        <a href="#">
+        <NavLink to={`/pokemon/${id}`}>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">#{id} - {name}</h5>
-        </a>
+        </NavLink>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Types</p>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
       </div>
