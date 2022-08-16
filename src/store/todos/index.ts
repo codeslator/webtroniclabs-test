@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { TodoState, todoState } from "./state";
 import * as templateReducers from './reducer';
 import { fetchTodoById, fetchTodos } from "./extraReducers";
-import { Todo } from "../../global/interfaces";
+import { ErrorPayload, Todo } from "../../global/interfaces";
 
 export const todoSlice = createSlice({
   name: 'todo',
@@ -15,16 +15,29 @@ export const todoSlice = createSlice({
     [fetchTodos.fulfilled as any]: (state: TodoState, { payload }: PayloadAction<Array<Todo>>) => {
       state.todos = payload;
       state.isLoading = false;
+      state.hasError = false;
+      state.error = '';
     },
-    [fetchTodos.rejected as any]: (state: TodoState) => {
+    [fetchTodos.rejected as any]: (state: TodoState, { payload }: PayloadAction<ErrorPayload>) => {
       state.todos = [];
       state.isLoading = false;
+      state.hasError = true;
+      state.error = payload.message;
+    },
+    [fetchTodoById.pending as any]: (state: TodoState) => {
+      state.isLoading = true;
     },
     [fetchTodoById.fulfilled as any]: (state: TodoState, { payload }: PayloadAction<Todo>) => {
       state.currentTodo = payload;
+      state.isLoading = false;
+      state.hasError = false;
+      state.error = '';
     },
-    [fetchTodos.rejected as any]: (state: TodoState) => {
+    [fetchTodos.rejected as any]: (state: TodoState, { payload }: PayloadAction<ErrorPayload>) => {
       state.currentTodo = null;
+      state.isLoading = false;
+      state.hasError = true;
+      state.error = payload.message;
     },
   },
 });

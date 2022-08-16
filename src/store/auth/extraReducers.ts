@@ -11,7 +11,7 @@ interface LoginParams {
 export const logIn = createAsyncThunk('auth/logIn', async ({ username, password }: LoginParams, { rejectWithValue }) => {
   try {
     if(username === LOGIN_USERNAME && password === LOGIN_PASSWORD) {
-      localStorage.setItem('username', username);
+      sessionStorage.setItem('username', username);
       const authUser: UserAuthenticated = {
         firstName: 'Andres',
         lastName: 'Melendez',

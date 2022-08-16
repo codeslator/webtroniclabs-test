@@ -28,7 +28,15 @@ import WaterBadge from '../assets/images/Type_Water.svg';
 import { POKEMON_TYPE } from "../global";
 
 const usePokemon = () => {
-  const { pokemonList, currentPokemon, isLoading, pageLimit, currentPage, pageOffset} = useAppSelector(selectPokedexState);
+  const {
+    pokemonList,
+    currentPokemon,
+    isLoading,
+    currentPage,
+    pageOffset,
+    hasError,
+    error,
+  } = useAppSelector(selectPokedexState);
   const dispatch = useAppDispatch();
 
   const fetchPokemonList = () => {
@@ -73,9 +81,8 @@ const usePokemon = () => {
       case POKEMON_TYPE.ROCK: return RockBadge;
       case POKEMON_TYPE.STEEL: return SteelBadge;
       case POKEMON_TYPE.WATER: return WaterBadge;
-      default: return '#000000';
-    }
-  }
+    };
+  };
   
   return {
     pokemonList,
@@ -88,6 +95,8 @@ const usePokemon = () => {
     currentPage,
     resetCurrentPokemon,
     getPokemonTypeBadge,
+    hasError,
+    error,
   };
 };
 

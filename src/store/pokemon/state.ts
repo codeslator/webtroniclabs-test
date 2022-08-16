@@ -7,6 +7,8 @@ export interface PokemonState {
   currentPage: number,
   pageLimit: number;
   pageOffset: number;
+  hasError: boolean;
+  error: string;
 }
 
 export const pokemonState: PokemonState = {
@@ -16,4 +18,6 @@ export const pokemonState: PokemonState = {
   currentPage: 1,
   pageLimit: 6,
   pageOffset: 0,
+  hasError: false,
+  error: '',
 };
