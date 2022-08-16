@@ -10,6 +10,10 @@ export const routes: ParentRoute[] = [
     children: [
       {
         Component: HomePage,
+        path: ROUTES.ROOT,
+      },
+      {
+        Component: HomePage,
         path: ROUTES.HOME,
       },
       {
