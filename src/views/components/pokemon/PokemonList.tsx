@@ -7,7 +7,7 @@ const PokemonList: FC = () => {
   return (
     <>
       {isLoading && (
-        <p className="text-3xl text-center font-medium text-gray-900 truncate dark:text-white">
+        <p className="text-3xl text-center font-medium text-gray-900 truncate dark:text-white my-10">
         Loading...
       </p>
       )}

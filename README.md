@@ -2,7 +2,6 @@
 
 ## Technical Test by WebtronicLabs - @codeslator (Andres Melendez)
 
-
 ### npm
 ```
 npm install
