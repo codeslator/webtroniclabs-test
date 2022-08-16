@@ -26,4 +26,4 @@ const MainLayout: FC = () => {
   );
 };
 
-export default MainLayout
+export default MainLayout;

@@ -6,7 +6,7 @@ const LoginPage: FC = () => {
     <div className="mx-auto w-full">
       <LoginForm />
     </div>
-  )
-}
+  );
+};
 
-export default LoginPage
+export default LoginPage;

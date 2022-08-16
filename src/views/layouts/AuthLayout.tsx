@@ -20,7 +20,7 @@ const AuthLayout: FC = () => {
         <Outlet />
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default AuthLayout
+export default AuthLayout;
